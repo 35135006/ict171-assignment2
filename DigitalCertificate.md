@@ -1,4 +1,4 @@
-#Obtaining The Digital Certificate
+# Obtaining The Digital Certificate
 
 - access certbot.org and select Apache and Linux(snap)
 - terminal codes (while in SSH):
