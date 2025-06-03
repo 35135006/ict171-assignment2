@@ -10,6 +10,9 @@
 - run on terminal: brew install git, git --version (this command is used to verify it works)
 - clone github website command: git clone https://github.com/35135006/ict171-assignment2.git
 - now you can edit and push to github.
+## transfering documents to github
+- use commands on terminal: git add fileexample.md, git commit -m "fileexample.md"
+
 
 
 
