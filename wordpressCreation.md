@@ -40,5 +40,25 @@
 - curl -O https://wordpress.org/latest.tar.gz
 - tar -xvzf latest.tar.gz
 - sudo mv wordpress /var/www/html/wordpress
+- sudo chown -R www-data:www-data /var/www/html/wordpress
+- sudo chmod -R 755 /var/www/html/wordpress
+
+## Configure Apache to Serve WordPress
+- sudo nano /etc/apache2/sites-available/wordpress.conf
+- <VirtualHost *:80>
+    ServerAdmin admin@yourdomain.com
+    DocumentRoot /var/www/html/wordpress
+    ServerName yourdomain.com
+    <Directory /var/www/html/wordpress>
+        AllowOverride All
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+- sudo a2ensite wordpress
+- sudo a2enmod rewrite
+- sudo systemctl restart apache2
+
+
 
 
