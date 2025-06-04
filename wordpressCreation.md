@@ -35,3 +35,10 @@
 - FLUSH PRIVILEGES;
 - EXIT;
 
+## Download and Set Up WordPress
+- cd /tmp
+- curl -O https://wordpress.org/latest.tar.gz
+- tar -xvzf latest.tar.gz
+- sudo mv wordpress /var/www/html/wordpress
+
+
