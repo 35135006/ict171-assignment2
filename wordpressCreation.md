@@ -5,7 +5,7 @@
 - sudo apt upgrade -y
 
 ## apache download
--sudo apt install apache2 -y
+- sudo apt install apache2 -y
 
 ## Installing SQL
 - sudo apt install mysql-server -y
@@ -27,5 +27,11 @@
 - php -v
 
 ## Create a Database for WordPress
--mysql -u root -p
--enter password
+- mysql -u root -p
+- enter password
+- CREATE DATABASE wordpress;
+- CREATE USER 'username'@'something' IDENTIFIED BY 'insert password here';
+- GRANT ALL PRIVILEGES ON wordpress.* TO 'username'@'something';
+- FLUSH PRIVILEGES;
+- EXIT;
+
