@@ -26,4 +26,6 @@
 - sudo apt install php libapache2-mod-php php-mysql -y
 - php -v
 
-
+## Create a Database for WordPress
+-mysql -u root -p
+-enter password
