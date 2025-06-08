@@ -17,10 +17,16 @@
 - Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y
 - Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
 
-- to reset password use: sudo systemctl stop mysql
-- sudo mysqld_safe --skip-grant-tables &
-- mysql -u root -p
-- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YourNewPassword';
+- sudo killall -9 mysqld mysqld_safe
+- sudo mysqld_safe --skip-grant-tables --skip-networking &
+- mysql -u root
+- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'webpassword';
+- UPDATE mysql.user 
+    -> SET 
+    ->   plugin = 'mysql_native_password',
+    ->   authentication_string = CONCAT('*', UPPER(SHA1(UNHEX(SHA1('webpassword')))))
+    -> WHERE 
+    ->   User = 'root' AND Host = 'localhost';
 - FLUSH PRIVILEGES;
 - EXIT;
 - DELETE FROM mysql.user WHERE User='';
