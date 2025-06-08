@@ -16,6 +16,9 @@
 - Disallow root login remotely? (Press y|Y for Yes, any other key for No) : y
 - Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y
 - Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
+
+- to reset password use: sudo systemctl stop mysql
+- sudo mysqld_safe --skip-grant-tables &
 - mysql -u root -p
 - ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YourNewPassword';
 - FLUSH PRIVILEGES;
