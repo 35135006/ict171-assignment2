@@ -16,7 +16,7 @@
 ## transfering documents to github
 
 - git add fileexample.md
-- 'git commit -m "write title"'
+- git commit -m "write title" 
 - git push
 
 
